@@ -46,13 +46,17 @@
   </header>
 
   <main id="main">
-    <header class="page-hero wrap reveal">
+    <header class="page-hero">
+      <div class="page-hero-media" aria-hidden="true"><img src="media/ballroom-setup.jpg" alt="" width="960" height="540"></div>
+      <div class="wrap reveal">
       <p class="kicker">Work</p>
-      <h1>Nights from the floor.</h1>
+      <h1>Nights from the <em>floor.</em></h1>
+      <div class="ornament" aria-hidden="true"><span></span></div>
       <p>A selection of setups and moments from our production work. Tap any frame to open it.</p>
+      </div>
     </header>
 
-    <section class="wrap">
+    <section class="wrap gallery-section">
       <div class="gallery-grid">
         <figure class="shot shot-wide">
           <button type="button" data-gallery data-type="video" data-full="media/led-dance-floor-ballroom.mp4" data-caption="Full ballroom setup: LED dance floor, wall speakers, and color-changing uplighting">
@@ -95,13 +99,13 @@
           <figcaption>Vinyl wrap &amp; cold sparks</figcaption>
         </figure>
 
-        <figure class="shot shot-wide">
+        <figure class="shot shot-tall">
           <button type="button" data-gallery data-type="image" data-full="media/vinyl-monogram.jpg" data-caption="Custom pink vinyl dance floor with a monogram, plus a speaker and a lighting fixture on a stand">
             <img src="media/vinyl-monogram.jpg" alt="Pink custom vinyl dance floor printed with a T and S monogram dated September 27, 2025, with a floral seating area, a speaker, and a lighting fixture on a stand" width="1080" height="810" loading="lazy">
           </button>
           <figcaption>Custom monogram vinyl · speaker and lighting stand</figcaption>
         </figure>
-        <figure class="shot shot-mid">
+        <figure class="shot shot-wide">
           <button type="button" data-gallery data-type="image" data-full="media/ballroom-setup.jpg" data-caption="Ballroom production setup with purple uplighting, a white dance floor, and a DJ booth">
             <img src="media/ballroom-setup.jpg" alt="Empty ballroom with purple uplighting on white drapes, a white dance floor, and a DJ booth at the far end" width="960" height="540" loading="lazy">
           </button>
@@ -126,14 +130,41 @@
           </button>
           <figcaption>Media + content</figcaption>
         </figure>
-        <figure class="shot shot-wide">
+        <figure class="shot shot-mid">
           <button type="button" data-gallery data-type="video" data-full="media/photobooth.mp4" data-caption="Photobooth and 360 booth at a formal party">
             <img src="media/photobooth-poster.jpg" alt="Guests in formal evening wear using a photobooth, including a 360 booth platform" width="1280" height="720" loading="lazy">
           </button>
           <figcaption>Photobooth &amp; 360 booth</figcaption>
         </figure>
       </div>
-      <p class="note reveal" style="margin-top:2rem">Want more in this grid? <span class="ph">[PLACEHOLDER: additional American-event photos — moving heads close up, speaker arrays, spark guns, CO2, low fog, lasers]</span></p>
+
+      <!--
+        FILMS SLOT
+        Krish is sending more videos. When one arrives, replace the placeholder figure below with:
+          <figure class="shot shot-wide">
+            <button type="button" data-gallery data-type="video" data-full="media/FILE.mp4" data-caption="CAPTION">
+              <video muted loop playsinline preload="metadata" poster="media/FILE-poster.jpg" data-auto>
+                <source src="media/FILE.mp4" type="video/mp4">
+              </video>
+            </button>
+            <figcaption>CAPTION</figcaption>
+          </figure>
+        (or drop a <video> into .film-slot in place of the <img>). Add one figure per film.
+      -->
+      <div class="films reveal" style="margin-top:6rem">
+        <div class="section-head center" style="margin-bottom:2.6rem">
+          <p class="kicker">Films</p>
+        </div>
+        <div class="film-slot">
+          <img src="media/corporate-crowd.jpg" alt="" width="960" height="540" loading="lazy">
+          <div>
+            <div class="film-play" aria-hidden="true"></div>
+            <p><span class="ph">[PLACEHOLDER: event film — new videos coming from Krish]</span></p>
+          </div>
+        </div>
+      </div>
+
+      <p class="note reveal" style="margin-top:3rem;text-align:center">Want more in this grid? <span class="ph">[PLACEHOLDER: additional American-event photos — moving heads close up, speaker arrays, spark guns, CO2, low fog, lasers]</span></p>
     </section>
 
     <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
@@ -149,7 +180,7 @@
     </dialog>
 
     <section class="cta-band wrap reveal">
-      <p class="kicker">Next step</p>
+      <p class="kicker both">Next step</p>
       <h2>Want this in your venue?</h2>
       <div class="cta-actions">
         <a class="btn btn-gold" href="contact.html">Request a quote</a>
