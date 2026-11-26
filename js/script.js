@@ -230,7 +230,7 @@
       btn.disabled = true;
       show("Sending…");
       try {
-        const res = await fetch("https://formsubmit.co/ajax/desisoundguys@gmail.com", {
+        const res = await fetch("https://formsubmit.co/ajax/info@dsgproductions.com", {
           method: "POST",
           headers: { Accept: "application/json" },
           body: new FormData(form),
@@ -241,7 +241,7 @@
         guestAcked = null;
         show("Got it. We’ll be in touch soon.");
       } catch (err) {
-        show("Couldn’t send right now. Email desisoundguys@gmail.com or call (206) 388-8696.");
+        show("Couldn’t send right now. Email info@dsgproductions.com or call (206) 388-8696.");
       } finally {
         btn.disabled = false;
       }
