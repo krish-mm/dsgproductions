@@ -352,6 +352,41 @@ section { padding: 7.5rem 0; }
 }
 .hero-meta dd { margin: 0; font-family: var(--serif); font-size: 1.35rem; color: var(--ivory); }
 
+/* Hero statement: the only words on the first screen */
+.hero-statement { padding: 0; }
+.hero-statement::before { inset: -18% -10%; }
+.hero h1.experience-box {
+  position: relative;
+  display: inline-flex; flex-direction: column; align-items: center; gap: 0.6rem;
+  padding: clamp(2.2rem, 5vw, 3.6rem) clamp(1.6rem, 6vw, 4.6rem);
+  border: 1px solid rgba(212,175,55,0.9);
+  background: linear-gradient(180deg, rgba(7,23,55,0.38), rgba(10,31,77,0.5));
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 30px 80px rgba(3,12,38,0.45), inset 0 0 0 0.55rem rgba(7,23,55,0), inset 0 0 60px rgba(7,23,55,0.35);
+  outline: 1px solid rgba(241,215,138,0.28);
+  outline-offset: -0.6rem;
+  text-shadow: none;
+  font-size: 1rem; line-height: 1;
+}
+.experience-box::before, .experience-box::after {
+  content: ""; position: absolute; width: 18px; height: 18px; border: 1px solid var(--gold-light);
+}
+.experience-box::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.experience-box::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+.xp-lead {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem); line-height: 1.1;
+  color: var(--ivory);
+  text-shadow: 0 2px 10px rgba(3,12,38,0.7);
+}
+.xp-word {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(2.1rem, 8.2vw, 6.4rem); line-height: 1;
+  letter-spacing: 0.16em; margin-right: -0.16em; /* balance trailing letter-space */
+  background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 3px 10px rgba(3,12,38,0.65));
+}
+
 /* Intro statement */
 .intro { text-align: center; padding: 7rem 0 2rem; }
 .intro p {
@@ -822,6 +857,8 @@ section { padding: 7.5rem 0; }
   .hero { padding-top: calc(var(--header) + 2.5rem); min-height: max(44rem, 100svh); }
   .hero-frame { inset: calc(var(--header) + 0.25rem) 0.75rem 0.75rem; }
   .hero h1 { font-size: clamp(2.9rem, 12.5vw, 4rem); }
+  .hero h1.experience-box { font-size: 1rem; }
+  .xp-word { font-size: clamp(2.2rem, 9.4vw, 3rem); letter-spacing: 0.12em; margin-right: -0.12em; }
   .hero .lede { font-size: 0.95rem; }
   .hero .kicker { margin-bottom: 1.4rem; }
   .hero-actions { flex-direction: column; align-items: stretch; max-width: 20rem; margin-inline: auto; margin-top: 2rem; }
