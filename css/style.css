@@ -639,7 +639,7 @@ section { padding: 7.5rem 0; }
 .form-title { font-family: var(--serif); font-size: 1.9rem; margin-bottom: -0.2rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
 .quote-form label {
-  display: grid; gap: 0.45rem;
+  display: grid; gap: 0.45rem; align-content: start;
   font-size: 0.6rem; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold);
 }
 .quote-form input, .quote-form select, .quote-form textarea {
