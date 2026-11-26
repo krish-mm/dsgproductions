@@ -25,17 +25,22 @@
   }
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+    const setMenu = (open) => {
+      nav.classList.toggle("open", open);
+      document.body.classList.toggle("nav-open", open);
+      if (header) header.classList.toggle("nav-is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    });
+    };
+    toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
     nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
-      });
+      link.addEventListener("click", () => setMenu(false));
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("open")) { setMenu(false); toggle.focus(); }
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760 && nav.classList.contains("open")) setMenu(false);
     });
   }
 
