@@ -59,6 +59,7 @@ h1, h2, h3, h4 {
 }
 h1 em, h2 em, h3 em { font-style: italic; color: var(--gold-light); }
 p { margin: 0; }
+h1, h2, h3, h4, dt, dd, .hero-meta, .contact-list, .faq summary { font-variant-numeric: lining-nums; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 ::selection { background: var(--gold); color: var(--navy-950); }
 :focus-visible { outline: 1px solid var(--gold-light); outline-offset: 3px; }
@@ -98,6 +99,12 @@ section { padding: 7.5rem 0; }
   width: 2.25rem; height: 1px;
   background: linear-gradient(90deg, var(--gold), transparent);
 }
+
+.section-head .kicker, .page-hero .kicker, .cta-band .kicker, .feature-copy .kicker, .contact-info .kicker, .hero .kicker {
+  font-size: 0.7rem; font-weight: 600; max-width: none; margin: 0 0 1.4rem;
+}
+.section-head .kicker, .page-hero .kicker, .cta-band .kicker, .feature-copy .kicker, .contact-info .kicker { color: var(--gold); }
+.hero .kicker { margin-bottom: 2rem; }
 
 /* Gold hairline ornament */
 .ornament {
@@ -459,8 +466,10 @@ section { padding: 7.5rem 0; }
 .cta-band::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(180deg, rgba(15,33,61,0.86), rgba(11,26,47,0.94));
-  box-shadow: inset 0 0 0 1px var(--hair), inset 0 0 0 0.9rem rgba(11,26,47,0), inset 0 0 0 calc(0.9rem + 1px) var(--hair-soft);
+  outline: 1px solid var(--hair-soft);
+  outline-offset: -0.9rem;
 }
+.cta-band { border: 1px solid var(--hair); }
 .cta-band h2 { font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1.2rem; }
 .cta-band p { color: var(--ivory-dim); max-width: 34rem; margin: 0 auto; font-weight: 300; }
 .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.6rem; }
@@ -791,10 +800,10 @@ section { padding: 7.5rem 0; }
   .hero .lede { font-size: 0.95rem; }
   .hero .kicker { margin-bottom: 1.4rem; }
   .hero-actions { flex-direction: column; align-items: stretch; max-width: 20rem; margin-inline: auto; margin-top: 2rem; }
-  .hero-meta { margin-top: 3rem; padding-bottom: 2.6rem; }
-  .hero-meta div { padding: 0 0.4rem; }
-  .hero-meta dd { font-size: 1rem; }
-  .hero-meta dt { font-size: 0.52rem; letter-spacing: 0.22em; }
+  .hero-meta { grid-template-columns: 1fr; margin-top: 3rem; padding: 0.4rem 0 2.6rem; max-width: 20rem; }
+  .hero-meta div, .hero-meta div + div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.75rem 0.2rem; border-left: 0; border-bottom: 1px solid var(--hair-soft); }
+  .hero-meta dt { margin: 0; font-size: 0.56rem; }
+  .hero-meta dd { font-size: 1.15rem; }
   .intro { padding: 5rem 0 0.5rem; }
   .section-head { margin-bottom: 2.8rem; }
   .cap-grid { grid-template-columns: 1fr; gap: 3rem; }
